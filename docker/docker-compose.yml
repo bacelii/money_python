@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  jupyter-finance:
+    build: .
+    ports:
+      - "8893:8888" # Map the Jupyter Notebook port
+    volumes:
+      - ../../money_python:/money_python # Mount the current directory into the container
+    environment:
+      - PYTHONUNBUFFERED=1 # Ensure logs appear in real-time
